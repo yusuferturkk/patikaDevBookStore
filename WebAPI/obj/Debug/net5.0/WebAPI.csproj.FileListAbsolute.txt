@@ -31,3 +31,10 @@ C:\practices\BookStore\WebAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.Abs
 C:\practices\BookStore\WebAPI\bin\Debug\net5.0\Microsoft.EntityFrameworkCore.InMemory.dll
 C:\practices\BookStore\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
 C:\practices\BookStore\WebAPI\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\practices\BookStore\WebAPI\bin\Debug\net5.0\AutoMapper.dll
+C:\practices\BookStore\WebAPI\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\practices\BookStore\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\practices\BookStore\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\practices\BookStore\WebAPI\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\practices\BookStore\WebAPI\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\practices\BookStore\WebAPI\bin\Debug\net5.0\FluentValidation.dll

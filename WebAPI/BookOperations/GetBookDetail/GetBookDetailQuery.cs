@@ -1,7 +1,6 @@
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using WebAPI.Common;
+using AutoMapper;
 using WebAPI.DBOperations;
 
 namespace WebAPI.BookOperations.GetBookDetail
@@ -9,28 +8,22 @@ namespace WebAPI.BookOperations.GetBookDetail
     public class GetBookDetailQuery
     {
         public int Id { get; set; }
+        private readonly IMapper _mapper;
         private readonly BookStoreDbContext _context;
 
-        public GetBookDetailQuery(BookStoreDbContext context)
+        public GetBookDetailQuery(BookStoreDbContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
 
-        public List<BookDetailViewModel> Handle()
+        public BookDetailViewModel Handle()
         {
             var bookListed = _context.Books.Where(b => b.Id == Id).SingleOrDefault();
-            List<BookDetailViewModel> viewModel = new List<BookDetailViewModel>();
-
             if (bookListed is null)
                 throw new InvalidOperationException ("Kitap bulunamadı.");
             
-            viewModel.Add(new BookDetailViewModel()
-                {
-                    Id = bookListed.Id,
-                    Title = bookListed.Title,
-                    PageCount = bookListed.PageCount,
-                    PublishDate = bookListed.PublishDate.Date.ToString("dd/MM/yyy")
-            });
+            BookDetailViewModel viewModel = _mapper.Map<BookDetailViewModel>(bookListed);
 
             return viewModel;
         }
@@ -38,8 +31,8 @@ namespace WebAPI.BookOperations.GetBookDetail
 
     public class BookDetailViewModel
     {
-        public int Id { get; set; }
         public string Title { get; set; }
+        public string Genre { get; set; }
         public int PageCount { get; set; }
         public string PublishDate { get; set; }
     }
